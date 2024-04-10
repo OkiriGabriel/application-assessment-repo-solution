@@ -13,7 +13,7 @@ RUN ./mvnw package
 
 
 FROM eclipse-temurin:21-jre-jammy as production
-EXPOSE 8081
+EXPOSE 8080
 COPY --from=build /app/target/spring-petclinic-*.war /spring-petclinic.war
 CMD ["java", "-jar", "/spring-petclinic.war"]
 
